@@ -24,7 +24,7 @@ AutoControl-Bench is a function-call benchmark designed to evaluate large langua
 |----------------------------------|-----------------------------------------------------------------------------|
 | Ambiguity Coverage               | 9 types (e.g., vague references, underspecification, ellipsis, etc.)       |
 | Evaluation Protocol              | Three-tier: fuzzy parsing, counter-questioning, multi-turn consistency      |
-| Benchmark Size                   | 30,000 examples (10k Tier-1, 10k Tier-2, 10k Tier-3)                        |
+| Benchmark Size                   | 20,000 examples (6k Tier-1, 8k Tier-2, 6k Tier-3)                        |
 | Scenarios                        | Safety-critical, Entertainment, Autonomous Driving, Comfort                 |
 | Output Format                    | JSON-based instruction–response pairs with function call targets            |
 | Agents Involved                  | Semantic Parsing, Adversarial Gen, Fuzz Injection, Multi-turn Simulation    |
@@ -39,14 +39,10 @@ AutoControl-Bench/
 │   ├── tier1_single_turn.json
 │   ├── tier2_fuzzy_clarify.json
 │   ├── tier3_multi_turn.json
-│   └── meta/
+│   └── protocol/
 ├── scripts/
-│   ├── generation_pipeline.py
-│   └── eval_metrics.py
-├── examples/
-│   └── demo_queries.md
-├── benchmarks/
-│   └── qwen2.5_results.json
+│   └── create_datasets.py
+├── requirements.txt
 ├── croissant_metadata.json
 └── README.md
 ⚙️ Quick Start
