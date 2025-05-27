@@ -21,21 +21,13 @@ A benchmark for ambiguous vehicle-control commands: parse fuzzy single-turn inst
 ## 📦 Quick Start
 
 ```bash
-git clone https://github.com/…/AutoControl-Bench.git
-cd AutoControl-Bench
+git clone [https://github.com/…/AutoControl-Bench.git](https://github.com/HangerAmber/AutoBench-Data.git)
+cd AutoBench-Data
 pip install -r requirements.txt
 ```
 
-```python
-from autocontrol_bench import load_dataset
-train = load_dataset("data/train.json")
-print(len(train))
-```
-
 ```bash
-python evaluation/evaluate.py \
-  --pred my_preds.json \
-  --truth data/test.json
+python scripts/create_datasets.py
 ```
 
 ## ⚙️ Metrics
