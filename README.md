@@ -1,4 +1,4 @@
-# AutoControl-Bench
+# AutoControl-Bench 🚗🧠
 
 A benchmark for ambiguous vehicle-control commands: parse fuzzy single-turn instructions, ask clarifications, and execute structured function calls.
 
@@ -17,6 +17,44 @@ A benchmark for ambiguous vehicle-control commands: parse fuzzy single-turn inst
   - `function_call(name, params)`  
   - or a formatted clarification question  
 - **Extensible**: add new functions, ambiguity types, models
+
+## 📁 Repository Structure
+
+```bash
+AutoControl-Bench/
+├── data/
+│   ├── tier1_single_turn.json
+│   ├── tier2_fuzzy_clarify.json
+│   ├── tier3_multi_turn.json
+│   └── protocol/
+├── scripts/
+│   └── create_ddatasets.py
+├── requirements.txt
+├── croissant_metadata.json
+├── README_zh.md
+└── README.md
+```
+
+```bash
+📄 Dataset Format (JSON)
+Each sample in the benchmark includes:
+{
+  "id": "multi_001",
+  "tier": "Tier-3",
+  "dialogue": [
+    {"user": "Turn the lights on.", "assistant": "Which lights? Headlights or interior?"},
+    {"user": "Headlights, please."}
+  ],
+  "target_call": {
+    "function": "control_lighting",
+    "parameters": {"zone": "headlights", "state": "on"}
+  },
+  "meta": {
+    "ambiguity_type": "underspecification",
+    "protocol_compliant": true
+  }
+}
+```
 
 ## 📦 Quick Start
 
